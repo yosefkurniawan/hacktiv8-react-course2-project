@@ -1,0 +1,124 @@
+/* General */
+
+body {
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+header {
+    background: #eee;
+    padding: 20px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #000;
+}
+
+main {
+    padding: 25px 0;
+}
+
+/* Form */
+
+input,
+select,
+button {
+    height: 30px;
+    line-height: 1;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Searchbar */
+
+.searchbar .button {
+    margin-left: 5px;
+}
+
+/* Product List */
+
+.product-list {
+    display: flex;
+}
+
+.product-list .item {
+    padding: 15px;
+    width: 20%;
+}
+
+.product-list .item .inner-wrapper {
+    border: 1px solid #eee;
+    padding: 20px;
+}
+
+.product-list .item .inner-wrapper:hover {
+    box-shadow: 0 0 5px #ccc;
+}
+
+.product-list .item .product-image {
+    margin-bottom: 15px;
+}
+
+.product-list .item .product-image img {
+    max-height: 200px;
+    margin: 0 auto;
+    display: block;
+}
+
+.product-list .item .product-name {
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.product-list .item .product-price {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 7px;
+}
+
+.product-list .item .product-actions {
+    margin-top: 10px;
+}
+
+.product-list .item .product-actions button {
+    width: 100%;
+}
+
+.product-list .item .product-actions button + button {
+    margin-top: 7px;
+}
+
+
+/* PDP */
+
+.product-top {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.gallery {
+    width: 45%;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 300px;
+}
+
+.shop {
+    width: 65%;
+    margin-left: auto;
+}
+
+/* PDP */
+
+.page-product .price {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.page-product .actions button + button {
+    margin-left: 10px;
+}
