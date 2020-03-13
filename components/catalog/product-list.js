@@ -2,28 +2,14 @@ import AddToCart from "../buttons/addToCart";
 import Button from "../buttons/default";
 import AddToWishlist from "../buttons/addToWishlist";
 import ViewProductLink from "../buttons/viewProductLink";
+import { VisibilityFilters } from "../../redux/actions/catalogFilterAction";
+import { getCatalog } from "../../redux/actions/catalogAction";
+import { connect } from "react-redux";
 
-const ProductList = () => {
-    const products = [
-        {
-            id: 1,
-            name: "Mi Note 10",
-            image:
-                "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-note-10/specs-img01.png",
-            desc:
-                "Tempor excepteur aute elit anim adipisicing culpa est. Lorem culpa laboris voluptate elit aliqua aliquip aute. Sint proident culpa aliquip do. Aliqua exercitation do quis culpa aute sit occaecat veniam. Commodo proident tempor voluptate cupidatat ut. Dolor minim amet consequat irure in voluptate amet exercitation elit. Laborum esse adipisicing dolor dolor consectetur est.",
-            price: "Rp 6.199.000"
-        },
-        {
-            id: 2,
-            name: "Redmi Note 8 Pro",
-            image:
-                "https://i01.appmifile.com/webfile/globalimg/products/pc/redmi-note-8-pro/g7_title_phone_p.png",
-            desc:
-                "Tempor excepteur aute elit anim adipisicing culpa est. Lorem culpa laboris voluptate elit aliqua aliquip aute. Sint proident culpa aliquip do. Aliqua exercitation do quis culpa aute sit occaecat veniam. Commodo proident tempor voluptate cupidatat ut. Dolor minim amet consequat irure in voluptate amet exercitation elit. Laborum esse adipisicing dolor dolor consectetur est.",
-            price: "Rp 4.399.000"
-        }
-    ];
+const ProductList = ({catalog, getCatalog}) => {
+    // console.log('this is product-list');
+    // console.log(catalog);
+    const products = catalog;
     return (
         <>
             {products.map(product => (
@@ -47,4 +33,34 @@ const ProductList = () => {
     );
 }
 
-export default ProductList;
+const getVisibleProducts = (catalog, filter) => {
+    // console.log(catalog);
+    // console.log(filter);
+    switch (filter) {
+        case VisibilityFilters.SHOW_ALL:
+            return catalog;
+        case VisibilityFilters.SHOW_SMARTPHONE:
+            return catalog.filter(product => product.category === filter);
+        case VisibilityFilters.SHOW_SMARTWATCH:
+            return catalog.filter(product => product.category === filter);
+        case VisibilityFilters.SHOW_LAPTOP:
+            return catalog.filter(product => product.category === filter);
+        case VisibilityFilters.SHOW_ACCESSORIES:
+            return catalog.filter(product => product.category === filter);
+        default:
+            throw new Error('Unknown filter: '+filter)
+    }
+}
+
+const mapStateToProps = state => ({
+    catalog: getVisibleProducts(state.catalog, state.catalogFilter)
+})
+
+const mapDispatchToProps = dispatch => ({
+    getCatalog: filter => dispatch(getCatalog(filter))
+})
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(ProductList);
