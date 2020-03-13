@@ -6,10 +6,19 @@ import { VisibilityFilters } from "../../redux/actions/catalogFilterAction";
 import { getCatalog } from "../../redux/actions/catalogAction";
 import { connect } from "react-redux";
 
-const ProductList = ({catalog, getCatalog}) => {
-    // console.log('this is product-list');
-    // console.log(catalog);
-    const products = catalog;
+const ProductList = ({catalog, getCatalog, keyword}) => {
+
+    const products = catalog.filter(function(product) {
+        if(keyword !== "") {
+            const result = product.name.toLowerCase().indexOf(keyword.toLowerCase());
+            if (result > -1) {
+                return product;
+            }
+        }else{
+            return product;
+        }
+    })
+
     return (
         <>
             {products.map(product => (

@@ -49,6 +49,6 @@ export const initStore = (initialState = {}) => {
         cart: [],
         catalogFilter: 'all'
     }
-    console.log(initialState);
+    // console.log(initialState);
     return createStore(rootReducer, initialState, applyMiddleware(thunk));
 }
