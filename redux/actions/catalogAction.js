@@ -1,4 +1,4 @@
-export const getCatalog = () => ({
+export const getCatalog = (category) => ({
     type: 'GET_CATALOG',
     category
 })

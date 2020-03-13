@@ -1,7 +1,7 @@
 const catalogFilter = (state = '', action) => {
     switch (action.type) {
         case "SET_FILTER":
-            return 'all'
+            return (action.filter) ? action.filter : 'all';
         default:
             return state;
     }

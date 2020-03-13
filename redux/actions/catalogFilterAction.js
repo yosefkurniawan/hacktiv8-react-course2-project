@@ -1,6 +1,9 @@
-export const setFilter = () => ({
+export const setFilter = (filter) => ({
     type: "SET_FILTER",
     filter
+});
+export const getFilter = () => ({
+    type: "GET_FILTER"
 });
 
 export const VisibilityFilters = {

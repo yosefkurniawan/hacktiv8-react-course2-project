@@ -103,6 +103,12 @@ button {
     margin-top: 7px;
 }
 
+.noresult {
+    font-style: italic;
+    margin: 10px 0;
+    color: #777;
+    text-align: center;
+}
 
 /* PDP */
 

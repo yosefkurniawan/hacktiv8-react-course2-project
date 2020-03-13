@@ -2,22 +2,27 @@ import AddToCart from "../buttons/addToCart";
 import Button from "../buttons/default";
 import AddToWishlist from "../buttons/addToWishlist";
 import ViewProductLink from "../buttons/viewProductLink";
-import { VisibilityFilters } from "../../redux/actions/catalogFilterAction";
-import { getCatalog } from "../../redux/actions/catalogAction";
+import { VisibilityFilters, getFilter } from "../../redux/actions/catalogFilterAction";
 import { connect } from "react-redux";
 
-const ProductList = ({catalog, getCatalog, keyword}) => {
+const ProductList = ({ catalog, _getFilter,keyword }) => {
 
     const products = catalog.filter(function(product) {
-        if(keyword !== "") {
-            const result = product.name.toLowerCase().indexOf(keyword.toLowerCase());
+        if (keyword !== "") {
+            const result = product.name
+                .toLowerCase()
+                .indexOf(keyword.toLowerCase());
             if (result > -1) {
                 return product;
             }
-        }else{
+        } else {
             return product;
         }
-    })
+    });
+
+    if (!products.length) {
+        return <div className="noresult">There is no product...</div>;
+    }
 
     return (
         <>
@@ -40,7 +45,7 @@ const ProductList = ({catalog, getCatalog, keyword}) => {
             ))}
         </>
     );
-}
+};
 
 const getVisibleProducts = (catalog, filter) => {
     // console.log(catalog);
@@ -66,7 +71,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    getCatalog: filter => dispatch(getCatalog(filter))
+    _getFilter: () => dispatch(getFilter())
 })
 
 export default connect(
