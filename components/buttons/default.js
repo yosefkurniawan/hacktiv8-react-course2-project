@@ -20,8 +20,9 @@ const Button = (props) => {
                 className={`button ${styles.button} ${
                     props.className ? props.className : ""
                 }`}
+                onClick={props.handleOnCLick}
             >
-                {props.title}
+                {`${props.title}(${props.qty})`}
             </button>
         );
     }
