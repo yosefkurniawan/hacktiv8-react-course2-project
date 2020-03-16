@@ -22,7 +22,7 @@ const Button = (props) => {
                 }`}
                 onClick={props.handleOnCLick}
             >
-                {`${props.title}(${props.qty})`}
+                {`${props.title} ${props.qty >=0 ? `(${props.qty})` : ''}`}
             </button>
         );
     }

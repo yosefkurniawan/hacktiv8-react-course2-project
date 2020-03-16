@@ -107,7 +107,6 @@ button {
     font-style: italic;
     margin: 10px 0;
     color: #777;
-    text-align: center;
 }
 
 /* PDP */
@@ -140,4 +139,56 @@ button {
 
 .page-product .actions button + button {
     margin-left: 10px;
+}
+
+/* Shopping Cart */
+
+.shopping-cart {
+    border: 1px solid #eee;
+}
+
+.shopping-cart th {
+    background: #eee;
+}
+
+.shopping-cart td {
+    border-top: 1px solid #eee;
+}
+
+.shopping-cart img {
+    max-width: 100px;
+}
+
+th.image {
+    width: 10%;
+}
+
+th.detail {
+    width: 30%;
+    text-align: left;
+}
+
+.shopping-cart th,
+.shopping-cart td {
+    padding: 15px;
+}
+
+td.price,
+td.qty,
+td.sub-total,
+th.price,
+th.qty,
+th.sub-total {
+    width: 10%;
+    text-align: right;
+}
+
+th.price,
+th.qty,
+th.sub-total {
+    text-align: center;
+}
+
+.cart-actions {
+    padding: 15px 0;
 }
