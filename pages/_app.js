@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-notifications/lib/notifications.css";
 import "../styles.css";
 import App from 'next/app';
 import { Provider } from 'react-redux';

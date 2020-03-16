@@ -272,3 +272,8 @@ th.sub-total {
     content: '+';
     font-size: 30px;
 }
+
+/* Notification */
+.notification {
+    box-shadow: none;
+}
