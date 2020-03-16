@@ -32,10 +32,27 @@ const ProductList = ({ catalog, _getFilter,keyword }) => {
                 <div className="item" key={product.id}>
                     <div className="inner-wrapper">
                         <div className="product-image">
-                            <img src={product.image} title={product.name} />
+                            <Link
+                                href="/product/[id]"
+                                as={`/product/${product.id}`}
+                            >
+                                <a>
+                                    <img
+                                        src={product.image}
+                                        title={product.name}
+                                    />
+                                </a>
+                            </Link>
                         </div>
                         <div className="product-name">
-                            <span>{product.name}</span>
+                            <Link
+                                href="/product/[id]"
+                                as={`/product/${product.id}`}
+                            >
+                                <a>
+                                    <span>{product.name}</span>
+                                </a>
+                            </Link>
                         </div>
                         <div className="product-price">
                             <Price price={product.price} />
