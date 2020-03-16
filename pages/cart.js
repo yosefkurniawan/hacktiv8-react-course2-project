@@ -9,7 +9,7 @@ const Cart = ({cart}) => {
     if(cart.length) {
         content = (
             <>
-                <table className="shopping-cart">
+                <table className="table-item">
                     <thead>
                         <tr>
                             <th className="detail" colsPan="2">
@@ -26,7 +26,7 @@ const Cart = ({cart}) => {
                         ))}
                     </tbody>
                 </table>
-                <div className="cart-actions">
+                <div className="items-actions">
                     <Button href="/" type="link" title="Continue Shopping" />
                 </div>
             </>
