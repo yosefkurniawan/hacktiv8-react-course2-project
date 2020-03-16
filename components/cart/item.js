@@ -1,4 +1,5 @@
 import Price from "../catalog/price";
+import Link from "next/link";
 
 const CartItem = ({item}) => {
     return (
@@ -7,7 +8,7 @@ const CartItem = ({item}) => {
                 <img src={item.image} alt={item.name} />
             </td>
             <td className="detail">
-                <strong>{item.name}</strong>
+                <strong><Link href="/product/[id]"as={`/product/${item.id}`} ><a>{item.name}</a></Link></strong>
                 <p>{item.desc}</p>
             </td>
             <td className="price">
