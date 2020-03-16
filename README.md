@@ -1,4 +1,7 @@
-## Installarion
+## Overview
+This project is developed with Next.js
+
+## Installation
 
 ```bash
 npm install
