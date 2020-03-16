@@ -4,13 +4,12 @@ import { connect } from "react-redux";
 const Filter = ({filter, setFilter}) => {
     const _handleChange = (e) => {
         e.preventDefault();
-        console.log(e.target.value);
         setFilter(e.target.value);
     }
     return (
         <div className="filter">
             <form>
-                <select name="category" onChange={_handleChange}>
+                <select name="category" onChange={_handleChange} value={filter}>
                     <option value="all">--All--</option>
                     <option value="laptop">Laptop</option>
                     <option value="smartphone">Smart Phone</option>
@@ -29,7 +28,7 @@ const Filter = ({filter, setFilter}) => {
 }
 
 const mapStateToProps = state => ({
-    filter: state.filter
+    filter: state.catalogFilter
 });
 
 const mapDispatchToProps = dispatch => ({
