@@ -5,6 +5,7 @@ import AddToWishlist from '../../components/buttons/addToWishlist';
 import Layout from "../../components/layout/1column";
 import { useRouter } from "next/router";
 import { connect } from 'react-redux';
+import Price from '../../components/catalog/price';
 
 function ProductContent({catalog}) {
     const router = useRouter();
@@ -34,7 +35,9 @@ function ProductContent({catalog}) {
                 </div>
                 <div className="shop">
                     <h1>{product.name}</h1>
-                    <p className="price">{product.price}</p>
+                    <p className="price">
+                        <Price price={product.price} />
+                    </p>
                     <div className="actions">
                         <AddToCart product={product} />
                         <AddToWishlist product={product} />

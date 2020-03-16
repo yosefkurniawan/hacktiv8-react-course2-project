@@ -5,6 +5,7 @@ import ViewProductLink from "../buttons/viewProductLink";
 import { VisibilityFilters, getFilter } from "../../redux/actions/catalogFilterAction";
 import { connect } from "react-redux";
 import Link from "next/link";
+import Price from "./price";
 
 const ProductList = ({ catalog, _getFilter,keyword }) => {
 
@@ -34,7 +35,7 @@ const ProductList = ({ catalog, _getFilter,keyword }) => {
                             <img src={product.image} title={product.name} />
                         </div>
                         <div className="product-name">{product.name}</div>
-                        <div className="product-price">{product.price}</div>
+                        <div className="product-price"><Price price={product.price}/></div>
                         <div className="product-desc">{product.desc}</div>
                         <div className="product-actions">
                             <AddToCart product={product} />
