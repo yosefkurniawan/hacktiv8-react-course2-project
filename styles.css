@@ -202,6 +202,7 @@ form .form-control {
 
 .table-items {
     border: 1px solid #eee;
+    width: 100%;
 }
 
 .table-items th {

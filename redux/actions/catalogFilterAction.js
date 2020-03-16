@@ -13,3 +13,22 @@ export const VisibilityFilters = {
     SHOW_LAPTOP: "laptop",
     SHOW_ACCESSORIES: "accessories"
 };
+
+export const categories = [
+    {
+        value: 'smartphone',
+        name: 'Smart Phone',
+    },
+    {
+        value: 'laptop',
+        name: 'Laptop',
+    },
+    {
+        value: 'smartwatch',
+        name: 'Smart Watch',
+    },
+    {
+        value: 'accessories',
+        name: 'Accessories',
+    }
+];

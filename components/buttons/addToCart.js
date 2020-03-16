@@ -16,10 +16,6 @@ const AddToCart = ({product, cart, _addToCart}) => {
         const item = cart.find(item => item.id === productid);
         return item ? item.qty : 0;
     }
-    
-    const createNotification = (type, message, title = "") => {
-        NotificationManager.success(message, title);
-    };
 
     return (
         <>
