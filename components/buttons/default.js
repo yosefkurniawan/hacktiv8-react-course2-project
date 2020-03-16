@@ -4,7 +4,7 @@ import styles from './default.module.css';
 const Button = (props) => {
     if(props.type === 'link') {
         return (
-            <Link href={props.href}>
+            <Link href={props.href} as={props.as}>
                 <button
                     className={`button ${styles.button} ${
                         props.className ? props.className : ""
