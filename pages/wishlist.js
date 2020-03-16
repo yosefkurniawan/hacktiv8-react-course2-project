@@ -11,7 +11,7 @@ const Wishlist = ({wishlist}) => {
                 <table className="table-items">
                     <thead>
                         <tr>
-                            <th className="detail" colsPan="2">
+                            <th className="detail" colSpan="2">
                                 Product Detail
                             </th>
                             <th className="price">Price</th>
@@ -20,7 +20,7 @@ const Wishlist = ({wishlist}) => {
                     </thead>
                     <tbody>
                         {wishlist.map(item => (
-                            <WishlistItem item={item} />
+                            <WishlistItem item={item} key={item.id} />
                         ))}
                     </tbody>
                 </table>
@@ -32,7 +32,7 @@ const Wishlist = ({wishlist}) => {
     } else {
         content = (
             <>
-                <div class="noresult">You have no wishlist at the moment...</div>
+                <div className="noresult">You have no wishlist at the moment...</div>
                 <div className="items-actions">
                     <Button href="/" type="link" title="Continue Shopping" />
                 </div>
@@ -41,7 +41,7 @@ const Wishlist = ({wishlist}) => {
     }   
     
     return (
-        <div class="page-wishlist">
+        <div className="page-wishlist">
             <h1>Wishlist</h1>
             {content}
         </div>

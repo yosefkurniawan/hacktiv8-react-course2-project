@@ -12,7 +12,7 @@ const Cart = ({cart}) => {
                 <table className="table-items">
                     <thead>
                         <tr>
-                            <th className="detail" colsPan="2">
+                            <th className="detail" colSpan="2">
                                 Product Detail
                             </th>
                             <th className="price">Price</th>
@@ -22,7 +22,7 @@ const Cart = ({cart}) => {
                     </thead>
                     <tbody>
                         {cart.map(item => (
-                            <CartItem item={item} />
+                            <CartItem item={item} key={item.id} />
                         ))}
                     </tbody>
                 </table>
