@@ -15,7 +15,7 @@ const CartItem = ({item}) => {
                 <Price price={item.price} />
             </td>
             <td className="qty">{item.qty}</td>
-            <td className="sub-total"></td>
+            <td className="sub-total"><Price price={item.qty * item.price}/></td>
         </tr>
     );
 }
