@@ -38,7 +38,7 @@ const ProductList = ({ catalog, _getFilter,keyword }) => {
                         <div className="product-desc">{product.desc}</div>
                         <div className="product-actions">
                             <AddToCart product={product} />
-                            <AddToWishlist />
+                            <AddToWishlist product={product} />
                             <ViewProductLink productid={product.id} />
                         </div>
                     </div>

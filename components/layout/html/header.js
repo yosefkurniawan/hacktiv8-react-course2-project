@@ -2,10 +2,14 @@ import Link from "next/link";
 import styles from "./header.module.css";
 import { connect } from "react-redux";
 
-function Header({cart}) {
-    let qty = 0;
+function Header({cart, wishlist}) {
+    let qtyCart = 0;
+    let qtyWishlist = 0;
     cart.map(function(item) {
-        qty += item.qty;
+        qtyCart += item.qty;
+    });
+    wishlist.map(function(item) {
+        qtyWishlist += item.qty;
     });
     return (
         <header className={styles.header}>
@@ -16,10 +20,10 @@ function Header({cart}) {
             </div>
             <nav className={styles.pushRight}>
                 <Link href="/cart">
-                    <a className={styles.navLink}>{`Cart(${qty})`}</a>
+                    <a className={styles.navLink}>{`Cart(${qtyCart})`}</a>
                 </Link>
                 <Link href="/wishlist">
-                    <a className={styles.navLink}>Wishlist(0)</a>
+                    <a className={styles.navLink}>{`Wishlist(${qtyWishlist})`}</a>
                 </Link>
             </nav>
         </header>
@@ -27,7 +31,8 @@ function Header({cart}) {
 }
 
 const mapStateToProps = (state) => ({
-    cart: state.cart
+    cart: state.cart,
+    wishlist: state.wishlist
 })
 
 export default connect(mapStateToProps, null)(Header);

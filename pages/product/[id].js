@@ -37,7 +37,7 @@ function ProductContent({catalog}) {
                     <p className="price">{product.price}</p>
                     <div className="actions">
                         <AddToCart product={product} />
-                        <AddToWishlist />
+                        <AddToWishlist product={product} />
                     </div>
                 </div>
             </div>

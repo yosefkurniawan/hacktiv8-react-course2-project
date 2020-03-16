@@ -48,6 +48,7 @@ export const initStore = (initialState = {}) => {
             }
         ],
         cart: [],
+        wishlist: [],
         catalogFilter: 'all'
     }
     // console.log(initialState);
