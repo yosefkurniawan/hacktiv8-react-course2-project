@@ -6,27 +6,13 @@ import Layout from "../../components/layout/1column";
 import { useRouter } from "next/router";
 import { connect } from 'react-redux';
 import Price from '../../components/catalog/price';
+import { Tabs, Tab } from 'react-bootstrap';
 
 function ProductContent({catalog}) {
     const router = useRouter();
     const id = router.query.id;
     const product = catalog.filter((product) => product.id === parseInt(id))[0];
 
-    // console.log('product');
-    // console.log(catalog);
-    // console.log(id);
-    // console.log(product);
-
-    // product = {
-    //     id: 1,
-    //     name: "Mi Note 10",
-    //     image:
-    //         "https://i01.appmifile.com/webfile/globalimg/products/pc/mi-note-10/specs-img01.png",
-    //     desc:
-    //         "Tempor excepteur aute elit anim adipisicing culpa est. Lorem culpa laboris voluptate elit aliqua aliquip aute. Sint proident culpa aliquip do. Aliqua exercitation do quis culpa aute sit occaecat veniam. Commodo proident tempor voluptate cupidatat ut. Dolor minim amet consequat irure in voluptate amet exercitation elit. Laborum esse adipisicing dolor dolor consectetur est.",
-    //     price: "Rp 6.199.000"
-    // };
-    
     return (
         <div className="page-product">
             <div className="product-top">
@@ -44,10 +30,13 @@ function ProductContent({catalog}) {
                     </div>
                 </div>
             </div>
-            <div className="info">
-                <h2>Description</h2>
-                <p>{product.desc}</p>
-            </div>
+            <Tabs defaultActiveKey="description" id="pdp-tabs">
+                <Tab eventKey="description" title="Description">
+                    <div className="p-3">
+                        <p>{product.desc}</p>
+                    </div>
+                </Tab>
+            </Tabs>
         </div>
     );
 }
@@ -56,7 +45,6 @@ const mapStateToProps = (state) => ({
     catalog: state.catalog
 })
 
-// export default ProductContent;
 export default Layout(
     connect(
         mapStateToProps,

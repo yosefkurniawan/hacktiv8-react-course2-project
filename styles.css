@@ -173,16 +173,21 @@ form .form-control {
 
 .gallery {
     width: 45%;
+    border: 1px solid #eee;
+    padding: 30px;
 }
 
 .gallery img {
     width: 100%;
     max-width: 300px;
+    margin: 0 auto;
+    display: block;
 }
 
 .shop {
     width: 65%;
     margin-left: auto;
+    padding-left: 35px;
 }
 
 /* PDP */
