@@ -23,7 +23,7 @@ const ProductList = ({ catalog, _getFilter,keyword }) => {
     });
 
     if (!products.length) {
-        return <div className="noresult">There is no product...</div>;
+        return <div className="noresult">Product not found...</div>;
     }
 
     return (
@@ -34,9 +34,15 @@ const ProductList = ({ catalog, _getFilter,keyword }) => {
                         <div className="product-image">
                             <img src={product.image} title={product.name} />
                         </div>
-                        <div className="product-name">{product.name}</div>
-                        <div className="product-price"><Price price={product.price}/></div>
-                        <div className="product-desc">{product.desc}</div>
+                        <div className="product-name">
+                            <span>{product.name}</span>
+                        </div>
+                        <div className="product-price">
+                            <Price price={product.price} />
+                        </div>
+                        <div className="product-desc">
+                            <p>{product.desc}</p>
+                        </div>
                         <div className="product-actions">
                             <AddToCart product={product} />
                             <AddToWishlist product={product} />

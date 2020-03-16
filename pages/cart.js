@@ -9,7 +9,7 @@ const Cart = ({cart}) => {
     if(cart.length) {
         content = (
             <>
-                <table className="table-item">
+                <table className="table-items">
                     <thead>
                         <tr>
                             <th className="detail" colsPan="2">

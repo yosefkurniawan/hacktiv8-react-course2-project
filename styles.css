@@ -26,8 +26,15 @@ a {
     color: #000;
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: underline;
+}
+
+span.price {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 7px;
 }
 
 /* Form */
@@ -92,9 +99,7 @@ button {
     margin-bottom: 7px;
 }
 
-.product-list .item .product-price {
-    font-size: 18px;
-    font-weight: 300;
+.product-price {
     margin-bottom: 7px;
 }
 
@@ -198,6 +203,11 @@ th.price,
 th.qty,
 th.sub-total {
     text-align: center;
+}
+
+.table-items .price {
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .items-actions {
