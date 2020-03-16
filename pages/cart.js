@@ -34,7 +34,7 @@ const Cart = ({cart}) => {
     }else{
         content = (
             <>
-                <div class="noresult">There is no item in your cart...</div>
+                <div className="noresult">There is no item in your cart...</div>
                 <div className="cart-actions">
                     <Button href="/" type="link" title="Continue Shopping" />
                 </div>
@@ -43,7 +43,7 @@ const Cart = ({cart}) => {
     }
 
     return (
-        <div class="page-cart">
+        <div className="page-cart">
             <h1>Shopping Cart</h1>
             {content}
         </div>
