@@ -4,6 +4,7 @@ import AddToWishlist from "../buttons/addToWishlist";
 import ViewProductLink from "../buttons/viewProductLink";
 import { VisibilityFilters, getFilter } from "../../redux/actions/catalogFilterAction";
 import { connect } from "react-redux";
+import Link from "next/link";
 
 const ProductList = ({ catalog, _getFilter,keyword }) => {
 
@@ -70,11 +71,7 @@ const mapStateToProps = state => ({
     catalog: getVisibleProducts(state.catalog, state.catalogFilter)
 })
 
-const mapDispatchToProps = dispatch => ({
-    _getFilter: () => dispatch(getFilter())
-})
-
 export default connect(
     mapStateToProps,
-    mapDispatchToProps
+    null
 )(ProductList);
