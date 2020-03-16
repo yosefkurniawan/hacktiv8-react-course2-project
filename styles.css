@@ -95,12 +95,14 @@ form .form-control {
 /* Product List */
 
 .product-list {
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .product-list .item {
     padding: 15px;
-    width: 20%;
+    flex: 0 0 20%;
 }
 
 .product-list .item .inner-wrapper {

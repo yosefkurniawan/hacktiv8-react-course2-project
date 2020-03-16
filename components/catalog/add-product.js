@@ -59,7 +59,6 @@ const AddProduct = props => {
                         validationSchema={AddProductSchema}
                         onSubmit={(values, { setSubmitting, resetForm }) => {
                             setSubmitting(true);
-                            console.log("adasd");
                             setTimeout(() => {
                                 let newId =
                                     props.catalog[

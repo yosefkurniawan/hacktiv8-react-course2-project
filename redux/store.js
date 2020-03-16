@@ -5,7 +5,7 @@ import {composeWithDevTools} from "redux-devtools-extension";
 
 export const initStore = (initialState = {}) => {
     initialState = {
-        catalog : [
+        catalog: [
             {
                 id: 1,
                 name: "Mi Note 10",
@@ -14,7 +14,7 @@ export const initStore = (initialState = {}) => {
                 desc:
                     "Tempor excepteur aute elit anim adipisicing culpa est. Lorem culpa laboris voluptate elit aliqua aliquip aute. Sint proident culpa aliquip do. Aliqua exercitation do quis culpa aute sit occaecat veniam. Commodo proident tempor voluptate cupidatat ut. Dolor minim amet consequat irure in voluptate amet exercitation elit. Laborum esse adipisicing dolor dolor consectetur est.",
                 price: 6199000,
-                category: 'smartphone'
+                category: "smartphone"
             },
             {
                 id: 2,
@@ -24,7 +24,7 @@ export const initStore = (initialState = {}) => {
                 desc:
                     "Tempor excepteur aute elit anim adipisicing culpa est. Lorem culpa laboris voluptate elit aliqua aliquip aute. Sint proident culpa aliquip do. Aliqua exercitation do quis culpa aute sit occaecat veniam. Commodo proident tempor voluptate cupidatat ut. Dolor minim amet consequat irure in voluptate amet exercitation elit. Laborum esse adipisicing dolor dolor consectetur est.",
                 price: 4399000,
-                category: 'smartphone'
+                category: "smartphone"
             },
             {
                 id: 3,
@@ -34,7 +34,7 @@ export const initStore = (initialState = {}) => {
                 desc:
                     "Tempor excepteur aute elit anim adipisicing culpa est. Lorem culpa laboris voluptate elit aliqua aliquip aute. Sint proident culpa aliquip do. Aliqua exercitation do quis culpa aute sit occaecat veniam. Commodo proident tempor voluptate cupidatat ut. Dolor minim amet consequat irure in voluptate amet exercitation elit. Laborum esse adipisicing dolor dolor consectetur est.",
                 price: 13399000,
-                category: 'laptop'
+                category: "laptop"
             },
             {
                 id: 4,
@@ -44,13 +44,53 @@ export const initStore = (initialState = {}) => {
                 desc:
                     "Tempor excepteur aute elit anim adipisicing culpa est. Lorem culpa laboris voluptate elit aliqua aliquip aute. Sint proident culpa aliquip do. Aliqua exercitation do quis culpa aute sit occaecat veniam. Commodo proident tempor voluptate cupidatat ut. Dolor minim amet consequat irure in voluptate amet exercitation elit. Laborum esse adipisicing dolor dolor consectetur est.",
                 price: 449000,
-                category: 'smartwatch'
+                category: "smartwatch"
+            },
+            {
+                id: 5,
+                name: "Screen Guard Mi Band 4",
+                image:
+                    "https://my-live-01.slatic.net/p/459339e5bb43aff645cfa919c0ebaeba.jpg",
+                desc:
+                    "Tempor excepteur aute elit anim adipisicing culpa est. Lorem culpa laboris voluptate elit aliqua aliquip aute. Sint proident culpa aliquip do. Aliqua exercitation do quis culpa aute sit occaecat veniam. Commodo proident tempor voluptate cupidatat ut. Dolor minim amet consequat irure in voluptate amet exercitation elit. Laborum esse adipisicing dolor dolor consectetur est.",
+                price: 5000,
+                category: "accessories"
+            },
+            {
+                id: 6,
+                name: "HUAWEI WATCH GT Active Sports Smartwatch 1.39 Inch",
+                image:
+                    "https://img.gkbcdn.com/s3/p/2019-05-15/huawei-watch-gt-sports-smart-watch-orange-1571984754171.jpg",
+                desc:
+                    "Tempor excepteur aute elit anim adipisicing culpa est. Lorem culpa laboris voluptate elit aliqua aliquip aute. Sint proident culpa aliquip do. Aliqua exercitation do quis culpa aute sit occaecat veniam. Commodo proident tempor voluptate cupidatat ut. Dolor minim amet consequat irure in voluptate amet exercitation elit. Laborum esse adipisicing dolor dolor consectetur est.",
+                price: 2999000,
+                category: "smartwatch"
+            },
+            {
+                id: 7,
+                name: "Iphone XR",
+                image:
+                    "https://ecs7.tokopedia.net/img/cache/700/attachment/2019/6/26/156155824117281/156155824117281_acaaefa6-a443-433d-96cf-5873a16899da.png",
+                desc:
+                    "Tempor excepteur aute elit anim adipisicing culpa est. Lorem culpa laboris voluptate elit aliqua aliquip aute. Sint proident culpa aliquip do. Aliqua exercitation do quis culpa aute sit occaecat veniam. Commodo proident tempor voluptate cupidatat ut. Dolor minim amet consequat irure in voluptate amet exercitation elit. Laborum esse adipisicing dolor dolor consectetur est.",
+                price: 10000000,
+                category: "smartphone"
+            },
+            {
+                id: 8,
+                name: "Iphone 6s",
+                image:
+                    "https://media.4rgos.it/s/Argos/6015549_R_SET?$Main768$&w=620&h=620",
+                desc:
+                    "Tempor excepteur aute elit anim adipisicing culpa est. Lorem culpa laboris voluptate elit aliqua aliquip aute. Sint proident culpa aliquip do. Aliqua exercitation do quis culpa aute sit occaecat veniam. Commodo proident tempor voluptate cupidatat ut. Dolor minim amet consequat irure in voluptate amet exercitation elit. Laborum esse adipisicing dolor dolor consectetur est.",
+                price: 10000000,
+                category: "smartphone"
             }
         ],
         cart: [],
         wishlist: [],
-        catalogFilter: 'all'
-    }
+        catalogFilter: "all"
+    };
     // console.log(initialState);
     const middlewares = applyMiddleware(thunk);
     return createStore(rootReducer, initialState, composeWithDevTools(middlewares));
