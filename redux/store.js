@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import reduxLogger from "redux-logger";
 import rootReducer from './reducers';
 import {composeWithDevTools} from "redux-devtools-extension";
 
@@ -92,6 +93,6 @@ export const initStore = (initialState = {}) => {
         catalogFilter: "all"
     };
     // console.log(initialState);
-    const middlewares = applyMiddleware(thunk);
+    const middlewares = applyMiddleware(thunk, reduxLogger);
     return createStore(rootReducer, initialState, composeWithDevTools(middlewares));
 }
