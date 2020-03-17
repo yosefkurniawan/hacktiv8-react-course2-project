@@ -1,15 +1,13 @@
 import Link from "next/link";
 import styles from "./header.module.css";
 import { connect } from "react-redux";
+import WishlistPopup from "../../wishlist";
 
 function Header({cart, wishlist}) {
     let qtyCart = 0;
     let qtyWishlist = 0;
     cart.map(function(item) {
         qtyCart += item.qty;
-    });
-    wishlist.map(function(item) {
-        qtyWishlist += item.qty;
     });
     return (
         <header className={styles.header}>
@@ -22,9 +20,7 @@ function Header({cart, wishlist}) {
                 <Link href="/cart">
                     <a className={styles.navLink}>{`Cart(${qtyCart})`}</a>
                 </Link>
-                <Link href="/wishlist">
-                    <a className={styles.navLink}>{`Wishlist(${qtyWishlist})`}</a>
-                </Link>
+                <WishlistPopup />
             </nav>
         </header>
     );
